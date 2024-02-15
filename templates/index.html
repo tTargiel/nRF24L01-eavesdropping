@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>State Machine</title>
+    <script src="{{ url_for('static', filename='socket.io.js') }}"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port);
+        socket.on('state', function(msg) {
+            document.getElementById('state').innerHTML = msg.state;
+        });
+    </script>
+</head>
+<body>
+    <h1 id="state">idle</h1>
+    <button onclick="socket.emit('idle');">Idle</button>
+    <button onclick="socket.emit('sniff');">Sniff</button>
+    <button onclick="socket.emit('listen');">Listen</button>
+</body>
+</html>
