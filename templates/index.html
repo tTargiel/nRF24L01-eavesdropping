@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>State Machine</title>
+    <title>nRF24L01+ eavesdropping</title>
     <script src="{{ url_for('static', filename='socket.io.js') }}"></script>
-    <script>
-        var socket = io.connect('http://' + document.domain + ':' + location.port);
-        socket.on('state', function(msg) {
-            document.getElementById('state').innerHTML = msg.state;
-        });
-    </script>
+    <script src="{{ url_for('static', filename='client.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <h1 id="state">idle</h1>
-    <button onclick="socket.emit('idle');">Idle</button>
-    <button onclick="socket.emit('sniff');">Sniff</button>
-    <button onclick="socket.emit('listen');">Listen</button>
+    <h1 id="title">nRF24L01+ Control Panel</h1>
+    <h2 id="state">Ready</h2>
+    <p id="message">Waiting for connection from the server...</p>
+    <div class="button-container">
+        <button id="state" class="btn-primary" onclick="socket.emit('idle');">1. Idle</button>
+        <button id="state" class="btn-secondary" onclick="socket.emit('listen');">2. Listen</button>
+        <button id="state" class="btn-success" onclick="socket.emit('sniff');">3. Sniff</button>
+        <button id="state" class="btn-abort" onclick="socket.emit('abort');">4. Abort</button>
+    </div>
+    <div id="power" class="button-container">
+        <h2>Select power amp. level:</h2>
+        <button id="power" class="btn-pa" onclick="socket.emit('PA_MIN');">PA_MIN</button>
+        <button id="power" class="btn-pa" onclick="socket.emit('PA_LOW');">PA_LOW</button>
+        <button id="power" class="btn-pa" onclick="socket.emit('PA_HIGH');">PA_HIGH</button>
+        <button id="power" class="btn-pa" onclick="socket.emit('PA_MAX');">PA_MAX</button>
+    </div>
 </body>
+
 </html>

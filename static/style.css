@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 #title {
+    color: #333;
+}
+
+#message {
+    height: 480px;
+    width: 100%;
+    max-width: 800px;
+    overflow-y: scroll;
+    font-size: 1.4em;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 24px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    align-items: center;
+}
+
+#power.button-container {
+    margin-top: 96px;
+}
+
+button#state {
+    font-size: 1.2em;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button#power {
+    font-size: 1em;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+}
+
+.btn-success {
+    background: #28a745;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #218838;
+}
+
+.btn-abort {
+    background: #a72828;
+    color: white;
+}
+
+.btn-abort:hover {
+    background: #882121;
+}
+
+.btn-pa {
+    background: #7d6c6c;
+    color: white;
+}
+
+.btn-pa:hover {
+    background: #685a5a;
+}
